@@ -26,6 +26,21 @@ function readLine() {
 
 // Complete the minimumLoss function below.
 function minimumLoss(price) {
+    var i,j;
+    var loss = Math.pow(10,16);
+    var min ; 
+    for(i=0;i<price.length;i++)
+    {
+        for(j=i+1;j<price.length;j++)
+        {
+            min = price[i]-price[j];
+            if(min>=0 && loss>min)
+            {
+                loss = min;
+            }
+        }
+    }
+    return loss; 
 
 
 }
